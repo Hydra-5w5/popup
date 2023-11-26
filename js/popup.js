@@ -42,7 +42,7 @@ if(superposition){
 }
 
 // Pour la section projets
-let elm__projets = document.querySelectorAll(".blocflex__projets");
+let elm__projets = document.querySelectorAll(".conteneur__projet");
 let infoActive = null;
 
   for (const elm of elm__projets) {
@@ -50,7 +50,7 @@ let infoActive = null;
       event.stopPropagation();
       let info = this.querySelector(".info__projet");
       infoActive = info;
-      info.style.display = 'flex';
+      info.style.transform = 'scale(1) translate(-50%, -50%)';
       superposition.style.display = 'block';
 
     })
@@ -61,7 +61,7 @@ let infoActive = null;
       event.stopPropagation();
       let info = document.querySelector(".info__projet");
       if (info) {
-        info.style.display = 'none';
+        info.style.transform = 'scale(0) translate(-50%, -50%)';
         superposition.style.display = 'none';
         infoActive = null;
       }
@@ -71,7 +71,7 @@ let infoActive = null;
   if(superposition){
     superposition.addEventListener('click', function(){
       if (infoActive) {
-        infoActive.style.display = 'none';
+        infoActive.style.transform = 'scale(0) translate(-50%, -50%)';
         superposition.style.display = 'none';
         infoActive = null;
       }
